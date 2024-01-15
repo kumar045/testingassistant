@@ -64,7 +64,7 @@ function initWebSocket(initMsg) {
   var clientId = Math.floor(Math.random() * 1010000);
   var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
   var ms = encodeURIComponent(JSON.stringify(initMsg))
-  var ws_path = ws_scheme + '://' + window.location.host + `/ws/${clientId}/cfg/${ms}`;
+  var ws_path = ws_scheme + '://' + 'voicechatflow.in' + `/ws/${clientId}/cfg/${ms}`;
 
   let socket = new WebSocket(ws_path);
   socket.binaryType = 'arraybuffer';
