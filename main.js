@@ -161,10 +161,19 @@ document.addEventListener("DOMContentLoaded", function() {
     chatBotOption.textContent = 'Chat Bot';
     iconDropdown.appendChild(chatBotOption);
 
-    // Icon click event to open the voice chat card
+    // Icon click event to open the voice chat card and show options
     voiceIcon.addEventListener('click', function() {
         card.classList.toggle('open');
+        iconDropdown.style.display = 'none'; // Hide the dropdown menu when opening the card
     });
+
+    // Function to toggle the dropdown menu for icon options
+    function toggleIconDropdown() {
+        iconDropdown.style.display = iconDropdown.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Event listener to toggle the dropdown menu when clicking on the icon container
+    iconContainer.addEventListener('click', toggleIconDropdown);
 
     // Speech Recognition Logic for voice chat
     let initialized = false;
@@ -457,3 +466,4 @@ document.addEventListener("DOMContentLoaded", function() {
     // Build the text chat interface
     buildChatInterface();
 });
+        
