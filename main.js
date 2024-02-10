@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         .icon-container {
             position: fixed;
-            right: 10px; /* Adjust position */
+            left: 10px;
             bottom: 10px;
             cursor: pointer;
             z-index: 9999; /* Ensure the icon is on top */
@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .icon {
             width: 50px;
             height: 50px;
+            display: none; /* Initially hide the icons */
         }
         .icon-dropdown {
             display: none;
@@ -139,10 +140,10 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.appendChild(iconContainer);
 
     // Create and append voice chat icon
-    var icon = document.createElement('img');
-    icon.src = 'https://i.ibb.co/x2Znbr6/free-chat-2639493-2187526.png'; // Replace with your icon path
-    icon.className = 'icon';
-    iconContainer.appendChild(icon);
+    var voiceIcon = document.createElement('img');
+    voiceIcon.src = 'https://i.ibb.co/x2Znbr6/free-chat-2639493-2187526.png'; // Replace with your icon path
+    voiceIcon.className = 'icon';
+    iconContainer.appendChild(voiceIcon);
 
     // Dropdown menu for icon
     var iconDropdown = document.createElement('div');
@@ -161,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function() {
     iconDropdown.appendChild(chatBotOption);
 
     // Icon click event to open the voice chat card
-    icon.addEventListener('click', function() {
+    voiceIcon.addEventListener('click', function() {
         card.classList.toggle('open');
     });
 
@@ -202,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         const json = await response.json();
-        voiceSession = json.session; // Updated to voiceSession
+        voiceSession = json.session;
         const duration = json.duration - 300;
         const audio_uri = "data:audio/wav;base64," + json.audio;
 
@@ -375,7 +376,6 @@ document.addEventListener("DOMContentLoaded", function() {
     async function sendMessage() {
         const input = document.querySelector('.chat-input');
         const text = input.value.trim();
-        console.log(text)
 
         if (text) {
             addMessage(text, 'human');
