@@ -163,13 +163,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Icon click event to open the voice chat card and show options
     voiceIcon.addEventListener('click', function() {
-        card.classList.toggle('open');
-        iconDropdown.style.display = 'none'; // Hide the dropdown menu when opening the card
-    });
+    card.classList.toggle('open');
+    toggleIconDropdown(); // Call the function to toggle the dropdown menu
+});
 
     // Function to toggle the dropdown menu for icon options
     function toggleIconDropdown() {
-        iconDropdown.style.display = iconDropdown.style.display === 'none' ? 'block' : 'none';
+    iconDropdown.style.display = iconDropdown.style.display === 'none' ? 'block' : 'none';
     }
 
     // Event listener to toggle the dropdown menu when clicking on the icon container
