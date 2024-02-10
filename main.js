@@ -163,20 +163,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Icon click event to open the voice chat card and show options
     voiceIcon.addEventListener('click', function() {
-    card.classList.toggle('open');
-    toggleIconDropdown(); // Call the function to toggle the dropdown menu
-});
+        card.classList.toggle('open');
+        toggleIconDropdown(); // Call the function to toggle the dropdown menu
+    });
 
     // Function to toggle the dropdown menu for icon options
     function toggleIconDropdown() {
-    iconDropdown.style.display = iconDropdown.style.display === 'none' ? 'block' : 'none';
+        iconDropdown.style.display = iconDropdown.style.display === 'none' ? 'block' : 'none';
     }
 
-// Event listener to toggle the dropdown menu when clicking on the icon container
-iconContainer.addEventListener('click', function() {
-    toggleIconDropdown(); // Call the function to toggle the dropdown menu
-});
-    
+    // Event listener to toggle the dropdown menu when clicking on the icon container
+    iconContainer.addEventListener('click', function() {
+        toggleIconDropdown(); // Call the function to toggle the dropdown menu
+    });
+
     // Speech Recognition Logic for voice chat
     let initialized = false;
     let started = false;
@@ -468,4 +468,3 @@ iconContainer.addEventListener('click', function() {
     // Build the text chat interface
     buildChatInterface();
 });
-        
